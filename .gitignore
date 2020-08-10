@@ -1,4 +1,4 @@
 node_modules
 .vscode/
-_public/_css
-_public/_js
+public/_css
+public/_js
