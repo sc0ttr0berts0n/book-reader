@@ -1,0 +1,4 @@
+node_modules
+.vscode/
+_public/_css
+_public/_js
