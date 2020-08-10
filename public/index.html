@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Ovations Scratch Off</title>
+    <title>Book Reader</title>
 
     <!-- common stuff for headers -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,9 +10,29 @@
 
     <!-- CSS and scripts -->
     <link href='_css/style.css' rel="stylesheet" type='text/css' media="screen" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
+    <div id="app">
+        <header class="header--container">
+
+            <h1 class="header--headline">{{headline}}</h1>
+            <h2 class="header--book-title">{{bookTitle}}<br /><span class="header--book-title__small">by {{bookAuthor}}</span></h2>
+        </header>
+        <main class="page--container">
+            <section class="page--single-container" v-for="page in pages">
+                <img class="page--graphic" :src="page.imgSrc" alt="" />
+                <div class="page--overlay">
+                    <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__play"></button>
+                    <button class="page--audio-button-wrapper" v-if="page.audioState === 'play'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-pause.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__pause"></button>
+                    <button class="page--audio-button-wrapper page--audio-button-wrapper__restart" v-on:click="handleRestartClick(page.id)"><img src="_img/icon-restart.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__restart"></button>
+                </div>
+                <div class="page--loading-bar"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js" integrity="sha512-adYefSF5Yqrk6IfUEa40OrIDc2Mgc2tErcS3DAU+WyZqlr/1Kr/FoKcHSNOP9hNHbOQjOgGxga4Yp/sK5w0ZmQ==" crossorigin="anonymous"></script>
     <script src="_js/app.js" type="text/javascript"></script>
 </body>
 

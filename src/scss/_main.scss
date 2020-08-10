@@ -1,0 +1,12 @@
+body {
+    color: #282828;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(#e7e7e8, 1),
+            rgba(#e7e7e8, 0) 40vh
+        ),
+        url('../_img/bg-leaves.jpg');
+    background-size: 400px;
+    font-family: 'Bree Serif', serif;
+}
