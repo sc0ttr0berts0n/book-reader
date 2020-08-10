@@ -5,6 +5,7 @@ $progress-bar-height: 1vmin;
         margin: 0 $gutter;
     }
     &--single-container {
+        background-color: #dddddd;
         position: relative;
         margin: $gutter auto;
         margin-bottom: 0;
@@ -37,8 +38,8 @@ $progress-bar-height: 1vmin;
             rgba(black, 1),
             rgba(black, 0) 50%
         );
-        opacity: 1;
-        // opacity: 0;
+        // opacity: 1;
+        opacity: 0;
         transition: 400ms;
         &:hover {
             opacity: 1;
@@ -88,5 +89,16 @@ $progress-bar-height: 1vmin;
         background-color: #d17000;
         transition: 20ms;
         transform-origin: left center;
+    }
+
+    &--tab {
+        text-align: center;
+        padding: 0.25rem;
+        font-size: 1.5rem;
+        color: #8a8a8a;
+        transition: 400ms;
+        &:hover {
+            color: #282828;
+        }
     }
 }
