@@ -1,25 +1,31 @@
-$progress-bar-height: 1vmin;
+$progress-bar-height: 0.5rem;
 
 .page {
     &--container {
+        display: flex;
+        flex-direction: column;
         margin: 0 $gutter;
     }
     &--single-container {
-        background-color: #dddddd;
         position: relative;
         margin: $gutter auto;
         margin-bottom: 0;
         overflow: hidden;
-        box-shadow: 0 0 1vmin 0vmin rgba(black, 0.6);
+        box-shadow: 0 0 3vmin 0vmin rgba(black, 0.6);
         border-radius: $progress-bar-height;
-        max-width: 800px;
         &:last-child {
             margin-bottom: $gutter;
         }
     }
 
+    &--single-wrapper {
+        object-fit: contain;
+    }
+
     &--graphic {
-        width: 100%;
+        width: 90vmin;
+        height: 90vmin;
+        object-fit: contain;
         height: auto;
     }
     &--overlay {
@@ -46,20 +52,16 @@ $progress-bar-height: 1vmin;
         }
     }
     &--audio-button-wrapper {
-        width: 9vmin;
-        height: 9vmin;
+        width: 6vmin;
+        height: 6vmin;
         min-width: 50px;
         min-height: 50px;
         transform: scale3d(0.95, 0.95, 1);
-        opacity: 0;
+        opacity: 1;
         transition: 600ms;
         padding: 0;
         cursor: pointer;
-        .page--overlay:hover & {
-            opacity: 0.6;
-        }
-        .page--overlay:hover &:hover {
-            opacity: 1;
+        .page--tab:hover &:hover {
             transform: scale3d(1, 1, 1);
         }
         &:active {
@@ -67,21 +69,44 @@ $progress-bar-height: 1vmin;
             transform: scale3d(0.85, 0.85, 1);
         }
         &__restart {
-            width: 3vmin;
-            height: 3vmin;
             margin-left: 0.5vmin;
         }
+    }
+    &--tab-audio-controls {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.25rem;
     }
     &--audio-button {
         width: 100%;
         height: auto;
     }
+    &--tab {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: 1fr $progress-bar-height;
+        grid-template-areas: 'tab-play tab-restart tab-title tab-buffer' 'tab-progress-bar tab-progress-bar tab-progress-bar tab-progress-bar';
+        background-color: #282828;
+        transition: 400ms;
+    }
+    &--name {
+        align-self: center;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #8a8a8a;
+        transition: 600ms;
+        .page--tab:hover & {
+            color: #ffffff;
+        }
+    }
     &--loading-bar {
+        grid-area: tab-progress-bar;
         position: relative;
         z-index: 10;
         height: $progress-bar-height;
         width: 100%;
-        background-color: #282828;
+        background-color: #8a8a8a;
     }
     &--loading-bar-progress {
         height: $progress-bar-height;
@@ -89,16 +114,5 @@ $progress-bar-height: 1vmin;
         background-color: #d17000;
         transition: 20ms;
         transform-origin: left center;
-    }
-
-    &--tab {
-        text-align: center;
-        padding: 0.25rem;
-        font-size: 1.5rem;
-        color: #8a8a8a;
-        transition: 400ms;
-        &:hover {
-            color: #282828;
-        }
     }
 }

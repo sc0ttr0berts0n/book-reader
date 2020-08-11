@@ -22,14 +22,16 @@
         </header>
         <main class="page--container">
             <section class="page--single-container" v-for="page in pages" :id="`page-${page.id}`">
-                <div class="page--tab">Page-{{page.id}}</div>
-                <img class="page--graphic" :src="page.imgSrc" alt="" />
-                <div class="page--overlay" v-if="page.hasAudio()">
-                    <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__play"></button>
-                    <button class="page--audio-button-wrapper" v-if="page.audioState === 'play'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-pause.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__pause"></button>
-                    <button class="page--audio-button-wrapper page--audio-button-wrapper__restart" v-on:click="handleRestartClick(page.num)"><img src="_img/icon-restart.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__restart"></button>
+                <div class="page--tab">
+                    <div class="page--tab-audio-controls">
+                        <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__play"></button>
+                        <button class="page--audio-button-wrapper" v-if="page.audioState === 'play'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-pause.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__pause"></button>
+                        <button class="page--audio-button-wrapper page--audio-button-wrapper__restart" v-on:click="handleRestartClick(page.num)"><img src="_img/icon-restart.svg" :alt="`Play Page ${page.id + 1}`" class="page--audio-button page--audio-button__restart"></button>
+                    </div>
+                    <div class="page--name">Page-{{page.id}}</div>
+                    <div class="page--loading-bar"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
                 </div>
-                <div class="page--loading-bar"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
+                <img class="page--graphic" :src="page.imgSrc" alt="" />
             </section>
         </main>
     </div>
