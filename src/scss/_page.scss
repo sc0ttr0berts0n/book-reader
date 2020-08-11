@@ -4,7 +4,6 @@ $progress-bar-height: 0.5rem;
     &--container {
         display: flex;
         flex-direction: column;
-        margin: 0 $gutter;
     }
     &--single-container {
         position: relative;
@@ -54,8 +53,8 @@ $progress-bar-height: 0.5rem;
     &--audio-button-wrapper {
         width: 6vmin;
         height: 6vmin;
-        min-width: 50px;
-        min-height: 50px;
+        min-width: 44px;
+        min-height: 44px;
         transform: scale3d(0.95, 0.95, 1);
         opacity: 1;
         transition: 600ms;
