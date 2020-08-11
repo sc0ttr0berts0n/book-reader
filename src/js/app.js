@@ -2,7 +2,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        pageCount: 24,
+        pageCount: 25,
         pages: [],
         headline: "Ms. Thilo's Library",
         bookTitle: 'Amos & Boris',
