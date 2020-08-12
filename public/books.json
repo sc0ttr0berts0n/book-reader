@@ -1,0 +1,187 @@
+{
+    "books": [
+      {
+        "pageCount": 25,
+        "bookTitle": "Amos & Boris",
+        "bookAuthor": "William Steig",
+        "pages": [
+          {
+            "num": 0,
+            "id": "00",
+            "title": "Front Cover",
+            "imgSrc": "00.jpg",
+            "audio": "00.mp3"
+          },
+          {
+            "num": 1,
+            "id": "01",
+            "title": "Page 1",
+            "imgSrc": "01.jpg",
+            "audio": "01.mp3"
+          },
+          {
+            "num": 2,
+            "id": "02",
+            "title": "Page 2",
+            "imgSrc": "02.jpg",
+            "audio": "02.mp3"
+          },
+          {
+            "num": 3,
+            "id": "03",
+            "title": "Page 3",
+            "imgSrc": "03.jpg",
+            "audio": "03.mp3"
+          },
+          {
+            "num": 4,
+            "id": "04",
+            "title": "Page 4",
+            "imgSrc": "04.jpg",
+            "audio": "04.mp3"
+          },
+          {
+            "num": 5,
+            "id": "05",
+            "title": "Page 5",
+            "imgSrc": "05.jpg",
+            "audio": "05.mp3"
+          },
+          {
+            "num": 6,
+            "id": "06",
+            "title": "Pages 6-7",
+            "imgSrc": "06.jpg",
+            "audio": "06.mp3"
+          },
+          {
+            "num": 7,
+            "id": "07",
+            "title": "Page 8",
+            "imgSrc": "07.jpg",
+            "audio": "07.mp3"
+          },
+          {
+            "num": 8,
+            "id": "08",
+            "title": "Page 9",
+            "imgSrc": "08.jpg",
+            "audio": "08.mp3"
+          },
+          {
+            "num": 9,
+            "id": "09",
+            "title": "Page 10",
+            "imgSrc": "09.jpg",
+            "audio": "09.mp3"
+          },
+          {
+            "num": 10,
+            "id": "10",
+            "title": "Page 11",
+            "imgSrc": "10.jpg",
+            "audio": "10.mp3"
+          },
+          {
+            "num": 11,
+            "id": "11",
+            "title": "Pages 12-13",
+            "imgSrc": "11.jpg",
+            "audio": "11.mp3"
+          },
+          {
+            "num": 12,
+            "id": "12",
+            "title": "Page 14",
+            "imgSrc": "12.jpg",
+            "audio": "12.mp3"
+          },
+          {
+            "num": 13,
+            "id": "13",
+            "title": "Page 15",
+            "imgSrc": "13.jpg",
+            "audio": "13.mp3"
+          },
+          {
+            "num": 14,
+            "id": "14",
+            "title": "Page 16",
+            "imgSrc": "14.jpg",
+            "audio": "14.mp3"
+          },
+          {
+            "num": 15,
+            "id": "15",
+            "title": "Page 17",
+            "imgSrc": "15.jpg",
+            "audio": "15.mp3"
+          },
+          {
+            "num": 16,
+            "id": "16",
+            "title": "Page 18",
+            "imgSrc": "16.jpg",
+            "audio": "16.mp3"
+          },
+          {
+            "num": 17,
+            "id": "17",
+            "title": "Page 19",
+            "imgSrc": "17.jpg",
+            "audio": "17.mp3"
+          },
+          {
+            "num": 18,
+            "id": "18",
+            "title": "Pages 20-21",
+            "imgSrc": "18.jpg",
+            "audio": "18.mp3"
+          },
+          {
+            "num": 19,
+            "id": "19",
+            "title": "Page 22",
+            "imgSrc": "19.jpg",
+            "audio": "19.mp3"
+          },
+          {
+            "num": 20,
+            "id": "20",
+            "title": "Page 23",
+            "imgSrc": "20.jpg",
+            "audio": "20.mp3"
+          },
+          {
+            "num": 21,
+            "id": "21",
+            "title": "Pages 24-25",
+            "imgSrc": "21.jpg",
+            "audio": "21.mp3"
+          },
+          {
+            "num": 22,
+            "id": "22",
+            "title": "Page 26",
+            "imgSrc": "22.jpg",
+            "audio": "22.mp3"
+          },
+          {
+            "num": 23,
+            "id": "23",
+            "title": "Page 27",
+            "imgSrc": "23.jpg",
+            "audio": "23.mp3"
+          },
+          {
+            "num": 24,
+            "id": "24",
+            "title": "Page 28",
+            "imgSrc": "24.jpg",
+            "audio": "24.mp3"
+          }
+        ]
+      }
+    ]
+  }
+  
