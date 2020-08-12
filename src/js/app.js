@@ -131,7 +131,7 @@ var app = new Vue({
       this.updatePageState();
     },
     selectedBookIdx: function (newIdx) {
-      window.location.replace(`#/${newIdx}`);
+      window.location.replace(`#/${newIdx || 0}`);
       this.updatePageState();
     },
   },
