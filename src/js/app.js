@@ -9,13 +9,71 @@ var app = new Vue({
     pages: [],
   },
   mounted: function () {
+    window.addEventListener("hashchange", this.updateSelectedBookIdx);
+
     fetch("books.json")
       .then((response) => response.json())
       .then((json) => {
         this.books = json.books;
       });
+
+    //Update based on Hash
+    this.updateSelectedBookIdx();
   },
   methods: {
+    updateSelectedBookIdx: function () {
+      const idx = parseInt(document.location.hash.split("/")[1]);
+      this.selectedBookIdx = idx;
+    },
+    updatePageState: function () {
+      if (!this.books || this.books.length <= 0) {
+        this.pages = [];
+        return;
+      }
+
+      let pages = [];
+
+      const toPageState = (page) => {
+        const audio = new Howl({ src: [`../_media/${page.audio}`] });
+        return {
+          num: page.num,
+          id: page.id,
+          audio: audio,
+          imgSrc: `../_media/${page.imgSrc}`,
+          audioProgress: 0,
+          audioState: "pause",
+          hasAudio: () => audio.duration() > 0,
+          raf: null,
+        };
+      };
+
+      const setupAudioWatcher = (page) => {
+        if (page.hasAudio) {
+          page.audio.on("play", () => {
+            page.audioState = "play";
+            this.raf = requestAnimationFrame(() =>
+              this.updateProgressBar(page.num)
+            );
+          });
+          page.audio.on("pause", () => {
+            page.audioState = "pause";
+            cancelAnimationFrame(page.raf);
+          });
+          page.audio.on("end", () => {
+            page.audioState = "pause";
+            page.audioProgress = 1;
+            cancelAnimationFrame(page.raf);
+          });
+        }
+      };
+
+      pages = this.books[this.selectedBookIdx].pages.map(toPageState);
+
+      // setup audio watcher
+      pages.forEach(setupAudioWatcher);
+      this.pages = pages;
+    },
+
     handlePlayClick: function (audio) {
       // cache whether its playing
       const wasPlaying = audio.playing();
@@ -70,52 +128,11 @@ var app = new Vue({
   },
   watch: {
     books: function (newBooks) {
-      if (!this.books || this.books.length <= 0) {
-        this.pages = [];
-        return;
-      }
-
-      let pages = [];
-
-      const toPageState = (page) => {
-        const audio = new Howl({ src: [`../_media/${page.audio}`] });
-        return {
-          num: page.num,
-          id: page.id,
-          audio: audio,
-          imgSrc: `../_media/${page.imgSrc}`,
-          audioProgress: 0,
-          audioState: "pause",
-          hasAudio: () => audio.duration() > 0,
-          raf: null,
-        };
-      };
-
-      const setupAudioWatcher = (page) => {
-        if (page.hasAudio) {
-          page.audio.on("play", () => {
-            page.audioState = "play";
-            this.raf = requestAnimationFrame(() =>
-              this.updateProgressBar(page.num)
-            );
-          });
-          page.audio.on("pause", () => {
-            page.audioState = "pause";
-            cancelAnimationFrame(page.raf);
-          });
-          page.audio.on("end", () => {
-            page.audioState = "pause";
-            page.audioProgress = 1;
-            cancelAnimationFrame(page.raf);
-          });
-        }
-      };
-
-      pages = newBooks[this.selectedBookIdx].pages.map(toPageState);
-
-      // setup audio watcher
-      pages.forEach(setupAudioWatcher);
-      this.pages = pages;
+      this.updatePageState();
+    },
+    selectedBookIdx: function (newIdx) {
+      window.location.replace(`#/${newIdx}`);
+      this.updatePageState();
     },
   },
 });
