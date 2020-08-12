@@ -3,6 +3,7 @@ var app = new Vue({
   el: "#app",
   data: {
     books: [],
+    selectedBookIdx: 0,
     pageCount: 25,
     headline: "Ms. Thilo's Library",
     pages: [],
@@ -11,7 +12,6 @@ var app = new Vue({
     fetch("books.json")
       .then((response) => response.json())
       .then((json) => {
-        console.log(json.books);
         this.books = json.books;
       });
   },
@@ -58,11 +58,13 @@ var app = new Vue({
   },
   computed: {
     bookTitle() {
-      return this.books && this.books.length > 0 ? this.books[0].bookTitle : "";
+      return this.books && this.books.length > 0
+        ? this.books[this.selectedBookIdx].bookTitle
+        : "";
     },
     bookAuthor() {
       return this.books && this.books.length > 0
-        ? this.books[0].bookAuthor
+        ? this.books[this.selectedBookIdx].bookAuthor
         : "";
     },
   },
@@ -93,10 +95,9 @@ var app = new Vue({
         if (page.hasAudio) {
           page.audio.on("play", () => {
             page.audioState = "play";
-            this.raf = requestAnimationFrame(() => {
-              console.log("UPDATE: ", page.num);
-              this.updateProgressBar(page.num);
-            });
+            this.raf = requestAnimationFrame(() =>
+              this.updateProgressBar(page.num)
+            );
           });
           page.audio.on("pause", () => {
             page.audioState = "pause";
@@ -110,7 +111,7 @@ var app = new Vue({
         }
       };
 
-      pages = newBooks[0].pages.map(toPageState);
+      pages = newBooks[this.selectedBookIdx].pages.map(toPageState);
 
       // setup audio watcher
       pages.forEach(setupAudioWatcher);
