@@ -2,21 +2,37 @@
     &--container {
         position: sticky;
         top: 0;
-        padding: 0.5rem 2rem;
+        padding: 0.25rem 1rem 0.5rem;
         background-color: #282828;
-        display: flex;
+        display: block;
         z-index: 100;
+        @media screen and (min-width: 500px) {
+            padding: 0.5rem 2rem;
+            display: flex;
+        }
     }
     &--title {
         color: #ffffff;
         white-space: nowrap;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: normal;
+        @media screen and (min-width: 500px) {
+            text-align-last: left;
+        }
     }
     &--button-strip {
         flex-basis: 100%;
-        margin-left: 1rem;
-        display: flex;
-        justify-content: flex-end;
+        display: none;
         align-items: center;
+        margin-top: 0.25rem;
+        justify-content: center;
+        @media screen and (min-width: 500px) {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 1rem;
+            margin-top: 0;
+        }
     }
     &--button {
         font-size: 1.5rem;
@@ -26,6 +42,7 @@
         border-radius: 9999px;
         padding: 0.25rem 1rem 0.5rem;
         margin-right: 1rem;
+        white-space: nowrap;
         &:last-child {
             margin-right: 0;
         }
