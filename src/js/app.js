@@ -8,32 +8,34 @@ var app = new Vue({
         bookTitle: 'Amos & Boris',
         bookAuthor: 'William Steig',
         pageTitleMap: {
-            '0': 'Front Cover',
-            '1': 'Page 1',
-            '2': 'Page 2',
-            '3': 'Page 3',
-            '4': 'Page 4',
-            '5': 'Page 5',
-            '6': 'Pages 6-7',
-            '7': 'Page 8',
-            '8': 'Page 9',
-            '9': 'Page 10',
-            '10': 'Page 11',
-            '11': 'Pages 12-13',
-            '12': 'Page 14',
-            '13': 'Page 15',
-            '14': 'Page 16',
-            '15': 'Page 17',
-            '16': 'Page 18',
-            '17': 'Page 19',
-            '18': 'Pages 20-21',
-            '19': 'Page 22',
-            '20': 'Page 23',
-            '21': 'Pages 24-25',
-            '22': 'Page 26',
-            '23': 'Page 27',
-            '24': 'Page 28',
+            0: 'Front Cover',
+            1: 'Page 1',
+            2: 'Page 2',
+            3: 'Page 3',
+            4: 'Page 4',
+            5: 'Page 5',
+            6: 'Pages 6-7',
+            7: 'Page 8',
+            8: 'Page 9',
+            9: 'Page 10',
+            10: 'Page 11',
+            11: 'Pages 12-13',
+            12: 'Page 14',
+            13: 'Page 15',
+            14: 'Page 16',
+            15: 'Page 17',
+            16: 'Page 18',
+            17: 'Page 19',
+            18: 'Pages 20-21',
+            19: 'Page 22',
+            20: 'Page 23',
+            21: 'Pages 24-25',
+            22: 'Page 26',
+            23: 'Page 27',
+            24: 'Page 28',
         },
+        bigPhotoMode: true,
+        isFullscreen: false,
     },
     mounted: function () {
         this.$nextTick(function () {
@@ -116,6 +118,37 @@ var app = new Vue({
                     this.updateProgressBar(i)
                 );
             }
+        },
+        toggleFullscreen: function (event) {
+            var element = document.documentElement;
+
+            if (event instanceof HTMLElement) {
+                element = event;
+            }
+
+            var isFullscreen =
+                document.webkitIsFullScreen || document.mozFullScreen || false;
+
+            element.requestFullScreen =
+                element.requestFullScreen ||
+                element.webkitRequestFullScreen ||
+                element.mozRequestFullScreen ||
+                function () {
+                    return false;
+                };
+            document.cancelFullScreen =
+                document.cancelFullScreen ||
+                document.webkitCancelFullScreen ||
+                document.mozCancelFullScreen ||
+                function () {
+                    return false;
+                };
+
+            this.isFullscreen = isFullscreen;
+
+            isFullscreen
+                ? document.cancelFullScreen()
+                : element.requestFullScreen();
         },
     },
 });

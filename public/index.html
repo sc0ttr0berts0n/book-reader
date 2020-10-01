@@ -15,12 +15,17 @@
 
 <body>
     <div id="app">
+        <div class="topbar--container">
+            <h1 class="topbar--title">{{headline}}</h1>
+            <div class="topbar--button-strip">
+                <button class="topbar--button" @click="toggleFullscreen()">Fullscreen</button>
+                <button class="topbar--button" @click="bigPhotoMode = !bigPhotoMode;">{{bigPhotoMode?'Small Pages':'Big Pages'}}</button>
+            </div>
+        </div>
         <header class="header--container">
-
-            <h1 class="header--headline">{{headline}}</h1>
             <h2 class="header--book-title">{{bookTitle}}<br /><span class="header--book-title__small">by {{bookAuthor}}</span></h2>
         </header>
-        <main class="page--container">
+        <main class="page--container" :class="{'page--container__big-photo-mode':bigPhotoMode}">
             <section class="page--single-container" v-for="page in pages" :id="`page-${page.id}`">
                 <div class="page--tab">
                     <div class="page--tab-audio-controls">

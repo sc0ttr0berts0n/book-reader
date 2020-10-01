@@ -1,0 +1,33 @@
+.topbar {
+    &--container {
+        position: sticky;
+        top: 0;
+        padding: 0.5rem 2rem;
+        background-color: #282828;
+        display: flex;
+        z-index: 100;
+    }
+    &--title {
+        color: #ffffff;
+        white-space: nowrap;
+    }
+    &--button-strip {
+        flex-basis: 100%;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &--button {
+        font-size: 1.5rem;
+        line-height: 1;
+        background-color: #d17000;
+        color: #ffffff;
+        border-radius: 9999px;
+        padding: 0.25rem 1rem 0.5rem;
+        margin-right: 1rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
