@@ -1,24 +1,38 @@
 .header {
     &--container {
-        margin: $gutter;
-        margin-bottom: $gutter * 2;
-        padding-bottom: $gutter;
+        padding-bottom: $gutter / 2;
         font-size: 2rem;
         line-height: 1;
         text-align: center;
         border-bottom: 0.125rem dotted #282828;
+        margin-top: $gutter / 2;
+        @media screen and (min-width: 500px) {
+            margin: $gutter;
+            margin-bottom: $gutter * 2;
+            padding-bottom: $gutter;
+        }
     }
     &--headline {
-        font-size: 4rem;
+        font-size: 2rem;
         margin-bottom: $gutter;
+        @media screen and (min-width: 500px) {
+            font-size: 4rem;
+        }
     }
     &--book-title {
         text-transform: uppercase;
         letter-spacing: 0.125rem;
         line-height: 0.8;
-        font-size: 3rem;
+        font-size: 2rem;
+        @media screen and (min-width: 500px) {
+            font-size: 3rem;
+        }
+
         &__small {
-            font-size: 2rem;
+            font-size: 1.25rem;
+            @media screen and (min-width: 500px) {
+                font-size: 2rem;
+            }
         }
     }
 }

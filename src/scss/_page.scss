@@ -26,6 +26,12 @@ $progress-bar-height: 0.5rem;
         height: 90vmin;
         object-fit: contain;
         height: auto;
+        .page--container__big-photo-mode & {
+            @media screen and (min-width: 500px) {
+                width: 95vmax;
+                height: auto;
+            }
+        }
     }
     &--overlay {
         display: flex;
