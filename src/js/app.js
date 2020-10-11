@@ -3,57 +3,47 @@ var app = new Vue({
     el: '#app',
     data: {
         pages: [],
-        pageCount: 25,
-        headline: "Ms. Thilo's Library",
-        bookTitle: 'Amos & Boris',
-        bookAuthor: 'William Steig',
-        pageTitleMap: {
-            0: 'Front Cover',
-            1: 'Page 1',
-            2: 'Page 2',
-            3: 'Page 3',
-            4: 'Page 4',
-            5: 'Page 5',
-            6: 'Pages 6-7',
-            7: 'Page 8',
-            8: 'Page 9',
-            9: 'Page 10',
-            10: 'Page 11',
-            11: 'Pages 12-13',
-            12: 'Page 14',
-            13: 'Page 15',
-            14: 'Page 16',
-            15: 'Page 17',
-            16: 'Page 18',
-            17: 'Page 19',
-            18: 'Pages 20-21',
-            19: 'Page 22',
-            20: 'Page 23',
-            21: 'Pages 24-25',
-            22: 'Page 26',
-            23: 'Page 27',
-            24: 'Page 28',
-        },
-        bigPhotoMode: true,
+        bigPhotoMode: false,
         isFullscreen: false,
+        headline: "Ms. Thilo's Library",
+        book: null,
     },
-    mounted: function () {
-        this.$nextTick(function () {
+    beforeMount() {
+        this.fetchBook();
+    },
+    methods: {
+        async fetchBook() {
+            const res = await fetch('./_media/metadata.json');
+            const data = await res.json();
+            this.book = data;
+            this.initBook();
+        },
+        initBook() {
             // push the pages into the pages array
-            for (let i = 0; i < this.pageCount; i++) {
-                const id = i.toString(10).padStart(2, '0');
-                const audio = new Howl({ src: [`../_media/${id}.mp3`] });
+            for (let i = 0; i < this.book.pageInfo.length; i++) {
+                // gather data
+                const el = this.book.pageInfo[i];
+                const id = el.id ?? i.toString();
+                const idPadded = id.padStart(2, '0');
+                const pageTitle = el.pageTitle ?? `${idPadded}.jpg`;
+                const imgSrc = el.imgSrc ?? `${idPadded}.jpg`;
+                const audioSrc = el.audioSrc ?? `${idPadded}.mp3`;
+
+                // build page object
                 const page = {
                     num: i,
-                    id: id,
-                    title: this.pageTitleMap[i],
-                    imgSrc: `../_media/${id}.jpg`,
-                    audioProgress: 0,
-                    audio: audio,
+                    id: idPadded,
+                    title: pageTitle,
+                    imgSrc: `../_media/${imgSrc}`,
+                    audioSrc: `../_media/${audioSrc}`,
+                    audio: new Howl({ src: [`../_media/${audioSrc}`] }),
                     audioState: 'pause',
+                    audioProgress: 0,
                     hasAudio: () => audio.duration() > 0,
                     raf: null,
                 };
+
+                // insert page into page array
                 this.pages.push(page);
 
                 // setup audio watcher
@@ -75,9 +65,8 @@ var app = new Vue({
                     });
                 }
             }
-        });
-    },
-    methods: {
+        },
+
         handlePlayClick: function (audio) {
             // cache whether its playing
             const wasPlaying = audio.playing();
