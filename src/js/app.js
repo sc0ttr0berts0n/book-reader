@@ -17,6 +17,7 @@ var app = new Vue({
             const data = await res.json();
             this.book = data;
             this.initBook();
+            this.setTitleTag();
         },
         initBook() {
             // push the pages into the pages array
@@ -66,7 +67,9 @@ var app = new Vue({
                 }
             }
         },
-
+        setTitleTag: function () {
+            document.title = `${this.book.title} by ${this.book.author}`;
+        },
         handlePlayClick: function (audio) {
             // cache whether its playing
             const wasPlaying = audio.playing();
