@@ -28,7 +28,7 @@ $progress-bar-height: 0.5rem;
         height: auto;
         .page--container__big-photo-mode & {
             @media screen and (min-width: 500px) {
-                width: 95vmax;
+                width: 95vw;
                 height: auto;
             }
         }
