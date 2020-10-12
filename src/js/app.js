@@ -29,6 +29,7 @@ var app = new Vue({
                 const pageTitle = el.pageTitle ?? `${idPadded}.jpg`;
                 const imgSrc = el.imgSrc ?? `${idPadded}.jpg`;
                 const audioSrc = el.audioSrc ?? `${idPadded}.mp3`;
+                const howl = new Howl({ src: [`../_media/${audioSrc}`] });
 
                 // build page object
                 const page = {
@@ -37,10 +38,10 @@ var app = new Vue({
                     title: pageTitle,
                     imgSrc: `../_media/${imgSrc}`,
                     audioSrc: `../_media/${audioSrc}`,
-                    audio: new Howl({ src: [`../_media/${audioSrc}`] }),
+                    audio: howl,
                     audioState: 'pause',
                     audioProgress: 0,
-                    hasAudio: () => audio.duration() > 0,
+                    hasAudio: () => howl.duration() > 0,
                     raf: null,
                 };
 
