@@ -82,6 +82,9 @@ $progress-bar-height: 0.5rem;
         justify-content: flex-start;
         align-items: center;
         padding: 0.25rem;
+        &__hidden {
+            visibility: hidden;
+        }
     }
     &--audio-button {
         width: 100%;
