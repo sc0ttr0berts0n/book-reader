@@ -1,107 +1,268 @@
 {
-    "title": "Amos & Boris",
-    "author": "William Steig",
+    "title": "The Fantastic Undersea Life of Jacques Cousteau",
+    "author": "Dan Yaccarino",
     "pageInfo": [
         {
             "id": "0",
-            "pageTitle": "Front Cover"
+            "pageTitle": "Front Cover",
+            "imgSrc": "00.jpg",
+            "audioSrc": "00.mp3"
         },
         {
             "id": "1",
-            "pageTitle": "Page 1",
+            "pageTitle": "Pages 2 & 3",
+            "imgSrc": "01.jpg",
+            "audioSrc": "01.mp3"
+        },
+        {
+            "id": "1b",
+            "pageTitle": "Page 3 Quote",
+            "imgSrc": "01-bubble.jpg",
+            "audioSrc": "01-bubble.mp3",
             "aside": true
         },
         {
             "id": "2",
-            "pageTitle": "Page 2"
+            "pageTitle": "Page 4",
+            "imgSrc": "02.jpg",
+            "audioSrc": "02.mp3"
         },
         {
+            "id": "2b",
+            "pageTitle": "Page 4 Quote",
+            "imgSrc": "02-bubble.jpg",
+            "audioSrc": "02-bubble.mp3",
+            "aside": true
+        },
+
+        {
             "id": "3",
-            "pageTitle": "Page 3"
+            "pageTitle": "Page 5",
+            "imgSrc": "03.jpg",
+            "audioSrc": "03.mp3"
         },
         {
             "id": "4",
-            "pageTitle": "Page 4"
+            "pageTitle": "Page 6",
+            "imgSrc": "04.jpg",
+            "audioSrc": "04.mp3"
+        },
+        {
+            "id": "4b",
+            "pageTitle": "Page 6 Quote",
+            "imgSrc": "04-bubble.jpg",
+            "audioSrc": "04-bubble.mp3",
+            "aside": true
         },
         {
             "id": "5",
-            "pageTitle": "Page 5"
+            "pageTitle": "Page 7",
+            "imgSrc": "05.jpg",
+            "audioSrc": "05.mp3"
+        },
+        {
+            "id": "5b",
+            "pageTitle": "Page 7 Quote",
+            "imgSrc": "05-bubble.jpg",
+            "audioSrc": "05-bubble.mp3",
+            "aside": true
         },
         {
             "id": "6",
-            "pageTitle": "Pages 6-7"
+            "pageTitle": "Page 8",
+            "imgSrc": "06.jpg",
+            "audioSrc": "06.mp3"
         },
         {
             "id": "7",
-            "pageTitle": "Page 8"
+            "pageTitle": "Pages 9 & 10",
+            "imgSrc": "07.jpg",
+            "audioSrc": "07.mp3"
+        },
+        {
+            "id": "7b",
+            "pageTitle": "Page 9 Quote",
+            "imgSrc": "07-bubble.jpg",
+            "audioSrc": "07-bubble.mp3",
+            "aside": true
         },
         {
             "id": "8",
-            "pageTitle": "Page 9"
+            "pageTitle": "Page 11",
+            "imgSrc": "08.jpg",
+            "audioSrc": "08.mp3"
         },
         {
             "id": "9",
-            "pageTitle": "Page 10"
+            "pageTitle": "Page 12",
+            "imgSrc": "09.jpg"
+        },
+        {
+            "id": "9b",
+            "pageTitle": "Page 12 Quote",
+            "imgSrc": "09-bubble.jpg",
+            "audioSrc": "09-bubble.mp3",
+            "aside": true
         },
         {
             "id": "10",
-            "pageTitle": "Page 11"
+            "pageTitle": "Page 13 & 14",
+            "imgSrc": "10.jpg",
+            "audioSrc": "10.mp3"
+        },
+        {
+            "id": "10b",
+            "pageTitle": "Page 14 Quote",
+            "imgSrc": "10-bubble.jpg",
+            "audioSrc": "10-bubble.mp3",
+            "aside": true
         },
         {
             "id": "11",
-            "pageTitle": "Pages 12-13"
+            "pageTitle": "Pages 15 & 16",
+            "imgSrc": "11.jpg",
+            "audioSrc": "11.mp3"
+        },
+        {
+            "id": "11b",
+            "pageTitle": "Page 16 Quote",
+            "imgSrc": "11-bubble.jpg",
+            "audioSrc": "11-bubble.mp3",
+            "aside": true
         },
         {
             "id": "12",
-            "pageTitle": "Page 14"
+            "pageTitle": "Pages 17 & 18",
+            "imgSrc": "12.jpg",
+            "audioSrc": "12.mp3"
+        },
+        {
+            "id": "12b",
+            "pageTitle": "Page 18 Quote",
+            "imgSrc": "12-bubble.jpg",
+            "audioSrc": "12-bubble.mp3",
+            "aside": true
         },
         {
             "id": "13",
-            "pageTitle": "Page 15"
+            "pageTitle": "Page 19",
+            "imgSrc": "13.jpg",
+            "audioSrc": "13.mp3"
         },
         {
             "id": "14",
-            "pageTitle": "Page 16"
+            "pageTitle": "Page 20",
+            "imgSrc": "14.jpg",
+            "audioSrc": "14.mp3"
+        },
+        {
+            "id": "14b",
+            "pageTitle": "Page 20 Quote",
+            "imgSrc": "14-bubble.jpg",
+            "audioSrc": "14-bubble.mp3",
+            "aside": true
         },
         {
             "id": "15",
-            "pageTitle": "Page 17"
+            "pageTitle": "Pages 21 & 22",
+            "imgSrc": "15.jpg",
+            "audioSrc": "15.mp3"
         },
         {
-            "id": "16",
-            "pageTitle": "Page 18"
-        },
-        {
-            "id": "17",
-            "pageTitle": "Page 19"
+            "id": "15b",
+            "pageTitle": "Page 22 Quote",
+            "imgSrc": "15-bubble.jpg",
+            "audioSrc": "15-bubble.mp3",
+            "aside": true
         },
         {
             "id": "18",
-            "pageTitle": "Pages 20-21"
+            "pageTitle": "Pages 23 & 24",
+            "imgSrc": "18.jpg",
+            "audioSrc": "18.mp3"
+        },
+        {
+            "id": "18b",
+            "pageTitle": "Page 24 Quote",
+            "imgSrc": "18-bubble.jpg",
+            "audioSrc": "18-bubble.mp3",
+            "aside": true
         },
         {
             "id": "19",
-            "pageTitle": "Page 22"
+            "pageTitle": "Page 25",
+            "imgSrc": "19.jpg",
+            "audioSrc": "19.mp3"
         },
         {
             "id": "20",
-            "pageTitle": "Page 23"
+            "pageTitle": "Page 26",
+            "imgSrc": "20.jpg",
+            "audioSrc": "20.mp3"
+        },
+        {
+            "id": "20b",
+            "pageTitle": "Page 26 Quote",
+            "imgSrc": "20-bubble.jpg",
+            "audioSrc": "20-bubble.mp3",
+            "aside": true
         },
         {
             "id": "21",
-            "pageTitle": "Pages 24-25"
+            "pageTitle": "Page 27",
+            "imgSrc": "21.jpg",
+            "audioSrc": "21.mp3"
+        },
+        {
+            "id": "21b",
+            "pageTitle": "Page 27 Quote",
+            "imgSrc": "21-bubble.jpg",
+            "audioSrc": "21-bubble.mp3",
+            "aside": true
         },
         {
             "id": "22",
-            "pageTitle": "Page 26"
+            "pageTitle": "Page 28",
+            "imgSrc": "22.jpg",
+            "audioSrc": "22.mp3"
         },
         {
             "id": "23",
-            "pageTitle": "Page 27"
+            "pageTitle": "Page 29",
+            "imgSrc": "23.jpg",
+            "audioSrc": "23.mp3"
         },
         {
             "id": "24",
-            "pageTitle": "Page 28"
+            "pageTitle": "Page 30",
+            "imgSrc": "24.jpg",
+            "audioSrc": "24.mp3"
+        },
+        {
+            "id": "24b",
+            "pageTitle": "Page 30 Quote",
+            "imgSrc": "24-bubble.jpg",
+            "audioSrc": "24-bubble.mp3",
+            "aside": true
+        },
+        {
+            "id": "25",
+            "pageTitle": "Page 31",
+            "imgSrc": "25.jpg",
+            "audioSrc": "25.mp3"
+        },
+        {
+            "id": "25b",
+            "pageTitle": "Page 31 Quote",
+            "imgSrc": "25-bubble.jpg",
+            "audioSrc": "25-bubble.mp3",
+            "aside": true
+        },
+        {
+            "id": "26",
+            "pageTitle": "Page 32",
+            "imgSrc": "26.jpg",
+            "audioSrc": "26.mp3"
         }
     ]
 }
