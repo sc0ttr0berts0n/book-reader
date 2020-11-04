@@ -30,6 +30,7 @@ var app = new Vue({
                 const imgSrc = el.imgSrc ?? `${idPadded}.jpg`;
                 const audioSrc = el.audioSrc ?? `${idPadded}.mp3`;
                 const howl = new Howl({ src: [`../_media/${audioSrc}`] });
+                const aside = el.aside;
 
                 // build page object
                 const page = {
@@ -38,6 +39,7 @@ var app = new Vue({
                     title: pageTitle,
                     imgSrc: `../_media/${imgSrc}`,
                     audioSrc: `../_media/${audioSrc}`,
+                    aside: aside,
                     audio: howl,
                     audioState: 'pause',
                     audioProgress: 0,

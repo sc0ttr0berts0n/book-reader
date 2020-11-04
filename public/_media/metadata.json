@@ -8,7 +8,8 @@
         },
         {
             "id": "1",
-            "pageTitle": "Page 1"
+            "pageTitle": "Page 1",
+            "aside": true
         },
         {
             "id": "2",
