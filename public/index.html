@@ -27,7 +27,7 @@
             <h2 v-if="!book">Loading...</h2>
         </header>
         <main class="page--container" :class="{'page--container__big-photo-mode':bigPhotoMode}" v-if="book">
-            <section class="page--single-container" v-for="page in pages" :id="`page-${page.id}`">
+            <section class="page--single-container" :class="{'page--single-container__aside':page.aside}" v-for="page in pages" :id="`page-${page.id}`">
                 <div class="page--tab">
                     <div class="page--tab-audio-controls" :class="[!page.hasAudio() ? 'page--tab-audio-controls__hidden':'']">
                         <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.title} Audio`" class="page--audio-button page--audio-button__play"></button>
