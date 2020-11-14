@@ -27,7 +27,8 @@
             <h2 v-if="!book">Loading...</h2>
         </header>
         <main class="page--container" :class="{'page--container__big-photo-mode':bigPhotoMode}" v-if="book">
-            <section class="page--single-container" :class="{'page--single-container__aside':page.aside}" v-for="page in pages" :id="`page-${page.id}`">
+            <section class="page--single-container" :class="{'page--single-container__aside':page.aside}" v-for="page in pages">
+                <span class="page--anchor" :id="`page-${page.id}`"></span>
                 <div class="page--tab">
                     <div class="page--tab-audio-controls" :class="[!page.hasAudio() ? 'page--tab-audio-controls__hidden':'']">
                         <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.title} Audio`" class="page--audio-button page--audio-button__play"></button>
@@ -40,6 +41,9 @@
                 <img class="page--graphic" :src="page.imgSrc" alt="" loading="lazy" />
             </section>
         </main>
+        <nav class="toc--wrapper toc--wrapper__activez">
+            <a :href="`#page-${page.id}`" class="toc--item" v-for="page in pages"><div class="toc--bullet"></div><div class="toc--title">{{page.title}}</div></a>
+        </nav>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js" integrity="sha512-adYefSF5Yqrk6IfUEa40OrIDc2Mgc2tErcS3DAU+WyZqlr/1Kr/FoKcHSNOP9hNHbOQjOgGxga4Yp/sK5w0ZmQ==" crossorigin="anonymous"></script>
     <script src="_js/app.js" type="text/javascript"></script>

@@ -126,4 +126,8 @@ $progress-bar-height: 0.5rem;
         transition: 20ms;
         transform-origin: left center;
     }
+    &--anchor {
+        position: relative;
+        top: -$header-height * 1.5;
+    }
 }
