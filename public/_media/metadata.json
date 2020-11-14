@@ -43,26 +43,26 @@
         },
         {
             "id": "4",
-            "pageTitle": "Page 6",
+            "pageTitle": "Page 6 & 7",
             "imgSrc": "04.jpg",
             "audioSrc": "04.mp3"
         },
         {
             "id": "4b",
-            "pageTitle": "Page 6 Quote",
+            "pageTitle": "Page 7 Quote",
             "imgSrc": "04-bubble.jpg",
             "audioSrc": "04-bubble.mp3",
             "aside": true
         },
         {
             "id": "5",
-            "pageTitle": "Page 7",
+            "pageTitle": "Page 8",
             "imgSrc": "05.jpg",
             "audioSrc": "05.mp3"
         },
         {
             "id": "5b",
-            "pageTitle": "Page 7 Quote",
+            "pageTitle": "Page 8 Quote",
             "imgSrc": "05-bubble.jpg",
             "audioSrc": "05-bubble.mp3",
             "aside": true
