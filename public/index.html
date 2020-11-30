@@ -21,10 +21,10 @@
                 <div class="topbar--button-strip">
                     <button class="topbar--button" @click="toggleFullscreen()">Fullscreen</button>
                     <button class="topbar--button" @click="bigPhotoMode = !bigPhotoMode;">{{bigPhotoMode?'Small Pages':'Big Pages'}}</button>
-                    <button class="topbar--button" @click="tocActive = !tocActive;">{{bigPhotoMode?'Hide T.O.C.':'Show T.O.C.'}}</button>
+                    <button class="topbar--button" @click="goToTopOfPage()">Go To Top</button>
                 </div>
             </div>
-            <header class="header--container" >
+            <header class="header--container" id="top">
                 <h2 class="header--book-title" v-if="book">{{book.title}}<br /><span class="header--book-title__small">by {{book.author}}</span></h2>
                 <h2 v-if="!book">Loading...</h2>
             </header>
@@ -56,7 +56,7 @@
                 </section>
             </main>
         </div>
-        <div class="sidebar-toc--toggle" @click="handleTocToggleClick()" v-if="hasToc">TOC</div>
+        <div class="sidebar-toc--toggle" @click="handleTocToggleClick()" v-if="hasToc">{{tocActive ? 'Close' : 'Contents'}}</div>
         <nav class="sidebar-toc--wrapper" v-if="hasToc">
             <div class="sidebar-toc--headline">Table Of Contents</div>
             <div v-for="page in pages" >

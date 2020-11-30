@@ -9,14 +9,14 @@
         {
             "id": "1",
             "pageTitle": "Page 1",
-            "aside": true,
             "isTocEntry": true,
             "tocLabel": "Chapter 1",
             "tocValue": "1"
         },
         {
             "id": "2",
-            "pageTitle": "Page 2"
+            "pageTitle": "Page 2",
+            "aside": true
         },
         {
             "id": "3",

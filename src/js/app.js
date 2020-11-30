@@ -164,5 +164,8 @@ var app = new Vue({
                 }, 500);
             }
         },
+        goToTopOfPage() {
+            document.querySelector('.app--container').scrollTop = 0;
+        },
     },
 });

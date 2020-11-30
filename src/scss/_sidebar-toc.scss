@@ -1,13 +1,14 @@
 .sidebar-toc {
     &--toggle {
         position: fixed;
+        z-index: 300;
         display: flex;
         justify-content: center;
         align-items: center;
         top: 5rem;
         left: 1.5rem;
-        width: 3rem;
         height: 3rem;
+        padding: 0 0.5rem;
         background-color: #282828;
         color: #ffffff;
         cursor: pointer;
@@ -17,7 +18,7 @@
         text-transform: uppercase;
         .toc-active & {
             border: 2px solid rgba(255, 255, 255, 0.5);
-            transform: translateX($toc-offset);
+            transform: translateX($toc-min-offset);
             box-shadow: rgba(255, 255, 255, 0.2) 0 0 1.5rem -0.25rem;
             &:hover {
                 box-shadow: rgba(255, 255, 255, 0.3) 0 0 2rem -0.25rem;
@@ -34,8 +35,8 @@
         left: 0;
         height: 100vh;
         padding: 1rem;
-        transform: translateX(-$toc-offset);
-        width: $toc-offset;
+        transform: translateX(-$toc-min-offset);
+        width: $toc-min-offset;
         min-width: $toc-min-offset;
         background-color: #000000;
         background-image: linear-gradient(to right, #282828, #000000);
