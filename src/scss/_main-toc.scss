@@ -39,4 +39,7 @@
         transform: translateY(-0.5rem);
         margin: 0 0.5rem;
     }
+    &--value {
+        white-space: nowrap;
+    }
 }
