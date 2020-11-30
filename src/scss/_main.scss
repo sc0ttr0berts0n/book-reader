@@ -1,12 +1,42 @@
 body {
     color: #282828;
-    background-color: #f0f0f0;
-    background-image: linear-gradient(
-            to bottom,
-            rgba(#e7e7e8, 1),
-            rgba(#e7e7e8, 0) 40vh
-        ),
-        url('../_img/bg-leaves.jpg');
-    background-size: 400px;
+    background-color: #000000;
     font-family: 'Bree Serif', serif;
+    overflow-x: hidden;
+    perspective: 1000px;
+    perspective-origin: right center;
+}
+
+.app {
+    &--container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    &--wrapper {
+        background-color: #f0f0f0;
+        background-image: linear-gradient(
+                to bottom,
+                rgba(#e7e7e8, 1),
+                rgba(#e7e7e8, 0) 40vh
+            ),
+            url('../_img/bg-leaves.jpg');
+        background-size: 400px;
+
+        transform-origin: right top;
+        transition: $toc-timing;
+
+        .toc-active & {
+            background-color: rgba(0, 0, 0, 0.1);
+            // transform: scale3d(0.8, 0.8, 1);
+            transform: translateZ(-100px) rotateY(-7.5deg);
+        }
+    }
 }

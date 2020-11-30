@@ -5,6 +5,8 @@ var app = new Vue({
         pages: [],
         bigPhotoMode: false,
         isFullscreen: false,
+        hasToc: true,
+        tocActive: false,
         headline: "Ms. Thilo's Library",
         book: null,
     },
@@ -27,6 +29,9 @@ var app = new Vue({
                 const id = el.id ?? i.toString();
                 const idPadded = id.padStart(2, '0');
                 const pageTitle = el.pageTitle ?? `${idPadded}.jpg`;
+                const isTocEntry = el.isTocEntry ?? false;
+                const tocLabel = el.tocLabel ?? pageTitle;
+                const tocValue = el.tocValue ?? false;
                 const imgSrc = el.imgSrc ?? `${idPadded}.jpg`;
                 const audioSrc = el.audioSrc ?? `${idPadded}.mp3`;
                 const howl = new Howl({ src: [`../_media/${audioSrc}`] });
@@ -37,6 +42,9 @@ var app = new Vue({
                     num: i,
                     id: idPadded,
                     title: pageTitle,
+                    isTocEntry: isTocEntry,
+                    tocLabel: tocLabel,
+                    tocValue: tocValue,
                     imgSrc: `../_media/${imgSrc}`,
                     audioSrc: `../_media/${audioSrc}`,
                     aside: aside,
@@ -144,6 +152,20 @@ var app = new Vue({
             isFullscreen
                 ? document.cancelFullScreen()
                 : element.requestFullScreen();
+        },
+        handleTocToggleClick() {
+            this.tocActive = !this.tocActive;
+        },
+        handleTocItemClick(url) {
+            this.tocActive = false;
+            if (url) {
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 500);
+            }
+        },
+        goToTopOfPage() {
+            document.querySelector('.app--container').scrollTop = 0;
         },
     },
 });

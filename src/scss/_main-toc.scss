@@ -1,0 +1,42 @@
+.main-toc {
+    &--container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 4rem;
+        margin-bottom: 8rem;
+        border-bottom: 0.125rem dotted #282828;
+        padding-bottom: 4rem;
+    }
+    &--wrapper {
+        width: 100%;
+        max-width: 600px;
+    }
+    &--headline {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        text-align: center;
+    }
+    &--item {
+        padding: 0 0.5rem;
+        display: flex;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #282828;
+        border-radius: 0.25rem;
+        &:hover {
+            background-color: #d17000;
+            color: #ffffff;
+        }
+    }
+    &--title {
+        white-space: nowrap;
+    }
+    &--dots {
+        flex-basis: 100%;
+        border-bottom: 4px dotted #282828;
+        transform: translateY(-0.5rem);
+        margin: 0 0.5rem;
+    }
+}
