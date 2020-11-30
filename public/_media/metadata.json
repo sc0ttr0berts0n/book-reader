@@ -9,7 +9,10 @@
         {
             "id": "1",
             "pageTitle": "Page 1",
-            "aside": true
+            "aside": true,
+            "isTocEntry": true,
+            "tocLabel": "Chapter 1",
+            "tocValue": "1"
         },
         {
             "id": "2",
@@ -33,7 +36,10 @@
         },
         {
             "id": "7",
-            "pageTitle": "Page 8"
+            "pageTitle": "Page 8",
+            "isTocEntry": true,
+            "tocLabel": "Chapter 2",
+            "tocValue": "8"
         },
         {
             "id": "8",
@@ -53,7 +59,10 @@
         },
         {
             "id": "12",
-            "pageTitle": "Page 14"
+            "pageTitle": "Page 14",
+            "isTocEntry": true,
+            "tocLabel": "Chapter 3",
+            "tocValue": "14"
         },
         {
             "id": "13",
@@ -85,7 +94,10 @@
         },
         {
             "id": "20",
-            "pageTitle": "Page 23"
+            "pageTitle": "Page 23",
+            "isTocEntry": true,
+            "tocLabel": "Chapter 4",
+            "tocValue": "23"
         },
         {
             "id": "21",

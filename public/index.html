@@ -14,35 +14,56 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="topbar--container">
-            <h1 class="topbar--title">{{headline}}</h1>
-            <div class="topbar--button-strip">
-                <button class="topbar--button" @click="toggleFullscreen()">Fullscreen</button>
-                <button class="topbar--button" @click="bigPhotoMode = !bigPhotoMode;">{{bigPhotoMode?'Small Pages':'Big Pages'}}</button>
-            </div>
-        </div>
-        <header class="header--container" >
-            <h2 class="header--book-title" v-if="book">{{book.title}}<br /><span class="header--book-title__small">by {{book.author}}</span></h2>
-            <h2 v-if="!book">Loading...</h2>
-        </header>
-        <main class="page--container" :class="{'page--container__big-photo-mode':bigPhotoMode}" v-if="book">
-            <section class="page--single-container" :class="{'page--single-container__aside':page.aside}" v-for="page in pages">
-                <span class="page--anchor" :id="`page-${page.id}`"></span>
-                <div class="page--tab">
-                    <div class="page--tab-audio-controls" :class="[!page.hasAudio() ? 'page--tab-audio-controls__hidden':'']">
-                        <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.title} Audio`" class="page--audio-button page--audio-button__play"></button>
-                        <button class="page--audio-button-wrapper" v-if="page.audioState === 'play'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-pause.svg" :alt="`Pause Page ${page.title} Audio`" class="page--audio-button page--audio-button__pause"></button>
-                        <button class="page--audio-button-wrapper page--audio-button-wrapper__restart" v-on:click="handleRestartClick(page.num)"><img src="_img/icon-restart.svg" :alt="`Restart Page ${page.title} Audio`" class="page--audio-button page--audio-button__restart"></button>
-                    </div>
-                    <div class="page--name">{{page.title}}</div>
-                    <div class="page--loading-bar" v-if="page.hasAudio()"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
+    <div id="app" class="app--container" :class="{'toc-active':tocActive}">
+        <div class="app--wrapper">
+            <div class="topbar--container">
+                <h1 class="topbar--title">{{headline}}</h1>
+                <div class="topbar--button-strip">
+                    <button class="topbar--button" @click="toggleFullscreen()">Fullscreen</button>
+                    <button class="topbar--button" @click="bigPhotoMode = !bigPhotoMode;">{{bigPhotoMode?'Small Pages':'Big Pages'}}</button>
+                    <button class="topbar--button" @click="tocActive = !tocActive;">{{bigPhotoMode?'Hide T.O.C.':'Show T.O.C.'}}</button>
                 </div>
-                <img class="page--graphic" :src="page.imgSrc" alt="" loading="lazy" />
-            </section>
-        </main>
-        <nav class="toc--wrapper toc--wrapper__activez">
-            <a :href="`#page-${page.id}`" class="toc--item" v-for="page in pages"><div class="toc--bullet"></div><div class="toc--title">{{page.title}}</div></a>
+            </div>
+            <header class="header--container" >
+                <h2 class="header--book-title" v-if="book">{{book.title}}<br /><span class="header--book-title__small">by {{book.author}}</span></h2>
+                <h2 v-if="!book">Loading...</h2>
+            </header>
+            <div class="main-toc--container" v-if="hasToc">
+                <div class="main-toc--wrapper" >
+                    <div class="main-toc--headline">Table Of Contents</div>
+                    <div v-for="page in pages">
+                        <a href="#" class="main-toc--item" v-if="page.isTocEntry" :href="`#page-${page.id}`" @click="tocActive = false">
+                            <div class="main-toc--title">{{page.tocLabel}}</div>
+                            <div class="main-toc--dots" v-if="page.tocValue"></div>
+                            <div class="main-toc--value" v-if="page.tocValue">{{page.tocValue}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <main class="page--container" :class="{'page--container__big-photo-mode':bigPhotoMode}" v-if="book">
+                <section class="page--single-container" :class="{'page--single-container__aside':page.aside}" v-for="page in pages">
+                    <span class="page--anchor" :id="`page-${page.id}`"></span>
+                    <div class="page--tab">
+                        <div class="page--tab-audio-controls" :class="[!page.hasAudio() ? 'page--tab-audio-controls__hidden':'']">
+                            <button class="page--audio-button-wrapper" v-if="page.audioState === 'pause'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-play.svg" :alt="`Play Page ${page.title} Audio`" class="page--audio-button page--audio-button__play"></button>
+                            <button class="page--audio-button-wrapper" v-if="page.audioState === 'play'" v-on:click="handlePlayClick(page.audio)"><img src="_img/icon-pause.svg" :alt="`Pause Page ${page.title} Audio`" class="page--audio-button page--audio-button__pause"></button>
+                            <button class="page--audio-button-wrapper page--audio-button-wrapper__restart" v-on:click="handleRestartClick(page.num)"><img src="_img/icon-restart.svg" :alt="`Restart Page ${page.title} Audio`" class="page--audio-button page--audio-button__restart"></button>
+                        </div>
+                        <div class="page--name">{{page.title}}</div>
+                        <div class="page--loading-bar" v-if="page.hasAudio()"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
+                    </div>
+                    <img class="page--graphic" :src="page.imgSrc" alt="" loading="lazy" />
+                </section>
+            </main>
+        </div>
+        <div class="sidebar-toc--toggle" @click="handleTocToggleClick()" v-if="hasToc">TOC</div>
+        <nav class="sidebar-toc--wrapper" v-if="hasToc">
+            <div class="sidebar-toc--headline">Table Of Contents</div>
+            <div v-for="page in pages" >
+                <a href="#" class="sidebar-toc--item" v-if="page.isTocEntry" @click="handleTocItemClick(`#page-${page.id}`)">
+                    {{page.tocLabel}}
+                </a>
+            </div>
         </nav>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js" integrity="sha512-adYefSF5Yqrk6IfUEa40OrIDc2Mgc2tErcS3DAU+WyZqlr/1Kr/FoKcHSNOP9hNHbOQjOgGxga4Yp/sK5w0ZmQ==" crossorigin="anonymous"></script>

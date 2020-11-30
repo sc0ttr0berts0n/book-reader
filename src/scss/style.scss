@@ -2,10 +2,14 @@
 
 $gutter: 4rem;
 $header-height: 1.25rem + $gutter / 2;
+$toc-offset: 15vw;
+$toc-min-offset: 12rem;
+$toc-timing: 200ms;
 
 @import 'reset';
 @import 'main';
 @import 'topbar';
 @import 'header';
 @import 'page';
-@import 'toc';
+@import 'sidebar-toc';
+@import 'main-toc';
