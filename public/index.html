@@ -52,7 +52,7 @@
                         <div class="page--name">{{page.title}}</div>
                         <div class="page--loading-bar" v-if="page.hasAudio()"><div class="page--loading-bar-progress" :style="{transform: `scaleX(${page.audioProgress})`}"></div></div>
                     </div>
-                    <img class="page--graphic" :src="page.imgSrc" alt="" loading="lazy" />
+                    <img class="page--graphic" :src="page.imgSrc" alt="" />
                 </section>
             </main>
         </div>
