@@ -1,6 +1,6 @@
 {
-    "title": "Amos & Boris",
-    "author": "William Steig",
+    "title": "Zathura",
+    "author": "Chris Van Allsburg",
     "pageInfo": [
         {
             "id": "0",
@@ -75,45 +75,6 @@
         {
             "id": "15",
             "pageTitle": "Page 17"
-        },
-        {
-            "id": "16",
-            "pageTitle": "Page 18"
-        },
-        {
-            "id": "17",
-            "pageTitle": "Page 19"
-        },
-        {
-            "id": "18",
-            "pageTitle": "Pages 20-21"
-        },
-        {
-            "id": "19",
-            "pageTitle": "Page 22"
-        },
-        {
-            "id": "20",
-            "pageTitle": "Page 23",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 4",
-            "tocValue": "23"
-        },
-        {
-            "id": "21",
-            "pageTitle": "Pages 24-25"
-        },
-        {
-            "id": "22",
-            "pageTitle": "Page 26"
-        },
-        {
-            "id": "23",
-            "pageTitle": "Page 27"
-        },
-        {
-            "id": "24",
-            "pageTitle": "Page 28"
         }
     ]
 }
