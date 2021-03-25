@@ -8,73 +8,63 @@
         },
         {
             "id": "1",
-            "pageTitle": "Page 1",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 1",
-            "tocValue": "1"
+            "pageTitle": "Title Page"
         },
         {
             "id": "2",
-            "pageTitle": "Page 2",
-            "aside": true
+            "pageTitle": "Page 1 + 2"
         },
         {
             "id": "3",
-            "pageTitle": "Page 3"
+            "pageTitle": "Page 3 + 4"
         },
         {
             "id": "4",
-            "pageTitle": "Page 4"
+            "pageTitle": "Page 5 + 6"
         },
         {
             "id": "5",
-            "pageTitle": "Page 5"
+            "pageTitle": "Page 7 + 8"
         },
         {
             "id": "6",
-            "pageTitle": "Pages 6-7"
+            "pageTitle": "Page 9 + 10"
         },
         {
             "id": "7",
-            "pageTitle": "Page 8",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 2",
-            "tocValue": "8"
+            "pageTitle": "Page 11 + 12"
         },
         {
             "id": "8",
-            "pageTitle": "Page 9"
+            "pageTitle": "Page 13 + 14"
         },
         {
             "id": "9",
-            "pageTitle": "Page 10"
+            "pageTitle": "Page 15 + 16"
         },
         {
             "id": "10",
-            "pageTitle": "Page 11"
+            "pageTitle": "Page 17 + 18"
         },
         {
             "id": "11",
-            "pageTitle": "Pages 12-13"
+            "pageTitle": "Page 19 + 20"
         },
         {
             "id": "12",
-            "pageTitle": "Page 14",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 3",
-            "tocValue": "14"
+            "pageTitle": "Page 21 + 22"
         },
         {
             "id": "13",
-            "pageTitle": "Page 15"
+            "pageTitle": "Page 23 + 24"
         },
         {
             "id": "14",
-            "pageTitle": "Page 16"
+            "pageTitle": "Page 25 + 26"
         },
         {
             "id": "15",
-            "pageTitle": "Page 17"
+            "pageTitle": "Page 27 + 28"
         }
     ]
 }
