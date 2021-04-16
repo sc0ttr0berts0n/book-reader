@@ -4,67 +4,67 @@
     "pageInfo": [
         {
             "id": "0",
-            "pageTitle": "Page 1"
+            "pageTitle": "Cover"
         },
         {
             "id": "1",
-            "pageTitle": "Page 2 & 3"
-        },
-        {
-            "id": "2",
             "pageTitle": "Page 4 & 5"
         },
         {
-            "id": "3",
+            "id": "2",
             "pageTitle": "Page 6 & 7"
         },
         {
-            "id": "4",
+            "id": "3",
             "pageTitle": "Page 8 & 9"
         },
         {
-            "id": "5",
+            "id": "4",
             "pageTitle": "Page 10 & 11"
         },
         {
-            "id": "6",
+            "id": "5",
             "pageTitle": "Page 12 & 13"
         },
         {
-            "id": "7",
+            "id": "6",
             "pageTitle": "Page 14 & 15"
         },
         {
-            "id": "8",
+            "id": "7",
             "pageTitle": "Page 16 & 17"
         },
         {
-            "id": "9",
+            "id": "8",
             "pageTitle": "Page 18 & 19"
         },
         {
-            "id": "10",
+            "id": "9",
             "pageTitle": "Page 20 & 21"
         },
         {
-            "id": "11",
+            "id": "10",
             "pageTitle": "Page 22 & 23"
         },
         {
-            "id": "12",
+            "id": "11",
             "pageTitle": "Page 24 & 25"
         },
         {
-            "id": "13",
+            "id": "12",
             "pageTitle": "Page 26 & 27"
         },
         {
-            "id": "14",
+            "id": "13",
             "pageTitle": "Page 28 & 29"
         },
         {
+            "id": "14",
+            "pageTitle": "Page 30 & 31"
+        },
+        {
             "id": "15",
-            "pageTitle": "Page 30"
+            "pageTitle": "Page 32 & 33"
         }
     ]
 }
