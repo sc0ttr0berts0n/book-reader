@@ -5,7 +5,7 @@ var app = new Vue({
         pages: [],
         bigPhotoMode: false,
         isFullscreen: false,
-        hasToc: true,
+        hasToc: false,
         tocActive: false,
         headline: "Ms. Thilo's Library",
         book: null,

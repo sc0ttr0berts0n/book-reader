@@ -8,112 +8,59 @@
         },
         {
             "id": "1",
-            "pageTitle": "Page 1",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 1",
-            "tocValue": "1"
+            "pageTitle": "Page 4 & 5"
         },
         {
             "id": "2",
-            "pageTitle": "Page 2",
-            "aside": true
+            "pageTitle": "Page 6 & 7"
         },
         {
             "id": "3",
-            "pageTitle": "Page 3"
+            "pageTitle": "Page 8 & 9"
         },
         {
             "id": "4",
-            "pageTitle": "Page 4"
+            "pageTitle": "Page 10 & 11"
         },
         {
             "id": "5",
-            "pageTitle": "Page 5"
+            "pageTitle": "Page 12 & 13"
         },
         {
             "id": "6",
-            "pageTitle": "Pages 6-7"
+            "pageTitle": "Page 14 & 15"
         },
         {
             "id": "7",
-            "pageTitle": "Page 8",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 2",
-            "tocValue": "8"
+            "pageTitle": "Page 16 & 17"
         },
         {
             "id": "8",
-            "pageTitle": "Page 9"
+            "pageTitle": "Page 18 & 19"
         },
         {
             "id": "9",
-            "pageTitle": "Page 10"
+            "pageTitle": "Page 20 & 21"
         },
         {
             "id": "10",
-            "pageTitle": "Page 11"
+            "pageTitle": "Page 22 & 23"
         },
         {
             "id": "11",
-            "pageTitle": "Pages 12-13"
+            "pageTitle": "Page 24 & 25"
         },
         {
             "id": "12",
-            "pageTitle": "Page 14",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 3",
-            "tocValue": "14"
+            "pageTitle": "Page 26 & 27"
         },
         {
             "id": "13",
-            "pageTitle": "Page 15"
+            "pageTitle": "Page 28 & 29"
         },
         {
             "id": "14",
-            "pageTitle": "Page 16"
-        },
-        {
-            "id": "15",
-            "pageTitle": "Page 17"
-        },
-        {
-            "id": "16",
-            "pageTitle": "Page 18"
-        },
-        {
-            "id": "17",
-            "pageTitle": "Page 19"
-        },
-        {
-            "id": "18",
-            "pageTitle": "Pages 20-21"
-        },
-        {
-            "id": "19",
-            "pageTitle": "Page 22"
-        },
-        {
-            "id": "20",
-            "pageTitle": "Page 23",
-            "isTocEntry": true,
-            "tocLabel": "Chapter 4",
-            "tocValue": "23"
-        },
-        {
-            "id": "21",
-            "pageTitle": "Pages 24-25"
-        },
-        {
-            "id": "22",
-            "pageTitle": "Page 26"
-        },
-        {
-            "id": "23",
-            "pageTitle": "Page 27"
-        },
-        {
-            "id": "24",
-            "pageTitle": "Page 28"
+            "pageTitle": "Page 30 & 31"
         }
     ]
 }
